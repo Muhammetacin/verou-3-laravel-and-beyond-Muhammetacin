@@ -15,7 +15,7 @@ class PostController extends Controller
 
     public function createPost(Request $request)
     {
-        clock($request);
-        return view('create_author');
+//        dd($request);
+        return view('create_post');
     }
 }

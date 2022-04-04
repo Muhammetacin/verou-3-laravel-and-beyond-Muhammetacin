@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('main');
-});
+})->name('home');
 
 Route::get('/posts', [PostController::class, 'getAllPosts'])->name('getPosts');
 
-Route::post('/create_author', [PostController::class, 'createAuthor'])->name('createAuthor');
+Route::get('/create_author', [AuthorController::class, 'getCreateView'])->name('createAuthor');
+Route::post('/create_author', [AuthorController::class, 'createAuthor'])->name('createAuthor');
