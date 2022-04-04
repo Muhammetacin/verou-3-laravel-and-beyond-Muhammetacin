@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('create_post')
+@section('create_author')
 
     <div class="block">
         <h1>Register as author</h1>

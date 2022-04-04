@@ -17,13 +17,17 @@ class AuthorController extends Controller
         $author_name = $request->name;
         $author_email = $request->email;
 
-        clock('Author name: '. $author_name);
-        clock('Author email: '. $author_email);
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+        ]);
 
         $author = Author::create([
            'name' => $author_name,
             'email' => $author_email
         ]);
+
+        session()->flash('success', "{$author->name} has been registered as a new author.");
 
         return redirect('/');
     }

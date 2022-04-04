@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
 @section('demo')
-    <h1>Hello laravel</h1>
-
-    <a href="{{ route('getPosts') }}">Get Posts</a>
-    <a href="{{ route('createAuthor') }}">Create Author</a>
+    <h1 class="text-6xl">Hello laravel</h1>
 @endsection
