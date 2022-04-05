@@ -59,6 +59,8 @@
         @yield('create_author')
 
         @yield('create_post')
+
+        @yield('post')
     </div>
 
     @include('layouts._partials.footer')

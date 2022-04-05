@@ -20,6 +20,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/posts', [PostController::class, 'getAllPosts'])->name('getPosts');
+Route::get('/posts/{id}', [PostController::class, 'getPost'])->name('getPost');
 
 Route::get('/create_post', [PostController::class, 'getCreatePostView'])->name('createPost');
 Route::post('/create_post', [PostController::class, 'createPost'])->name('createPost');

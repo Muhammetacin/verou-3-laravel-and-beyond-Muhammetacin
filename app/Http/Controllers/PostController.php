@@ -14,6 +14,13 @@ class PostController extends Controller
         return view('posts', compact('posts'));
     }
 
+    public function getPost(int $id)
+    {
+        $post = Post::where('id', $id)->first();
+        clock($post);
+        return view('post', compact('post'));
+    }
+
     public function createPost(Request $request)
     {
 
