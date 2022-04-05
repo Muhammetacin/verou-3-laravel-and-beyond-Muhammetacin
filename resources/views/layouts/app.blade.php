@@ -52,7 +52,9 @@
 
 
     <div class="items-center">
-        @yield('demo')
+        @yield('main')
+
+        @yield('posts')
 
         @yield('create_author')
 
