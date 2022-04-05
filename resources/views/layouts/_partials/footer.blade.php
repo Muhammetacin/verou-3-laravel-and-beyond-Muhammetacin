@@ -1,4 +1,4 @@
-<footer class="text-center text-white" style="background-color: #0a4275;">
+<footer class="w-full text-center text-white" style="background-color: #0a4275;">
     <div class="p-6">
         <div class="">
             <p class="flex justify-center items-center">

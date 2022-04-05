@@ -23,15 +23,18 @@
     </style>
 </head>
 <body class="antialiased">
-@include('layouts._partials.navbar')
-
-@if(session()->has('success'))
-    <div class="bg-green-800 text-center text-white">
-        <p class="py-3">{{ session('success') }}</p>
-    </div>
-@endif
 <div
-    class="flex flex-col items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    class="flex flex-col items-top justify-between w-full min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+
+    <div class="w-full">
+    @include('layouts._partials.navbar')
+
+    @if(session()->has('success'))
+        <div class="bg-green-800 text-center text-white w-full">
+            <p class="py-3">{{ session('success') }}</p>
+        </div>
+    @endif
+    </div>
     {{--    @if (Route::has('login'))--}}
     {{--        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">--}}
     {{--            @auth--}}
@@ -48,14 +51,16 @@
     {{--    --}}
 
 
+    <div class="items-center">
+        @yield('demo')
 
-    @yield('demo')
+        @yield('create_author')
+    </div>
 
-    @yield('create_author')
+    @include('layouts._partials.footer')
+
 
 </div>
-
-@include('layouts._partials.footer')
 
 </body>
 </html>
