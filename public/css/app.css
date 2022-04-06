@@ -501,6 +501,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -602,6 +606,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto {
   width: auto;
+}
+.w-3\/5 {
+  width: 60%;
 }
 .max-w-sm {
   max-width: 24rem;
@@ -782,6 +789,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .pt-8 {
   padding-top: 2rem;

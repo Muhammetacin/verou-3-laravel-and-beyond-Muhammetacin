@@ -32,7 +32,6 @@ class PostController extends Controller
         ]);
 
         $authorSelected = Author::where('name', $request->author)->first();
-        clock($authorSelected);
 
          $post = Post::create([
             'author_id' => $authorSelected->id,

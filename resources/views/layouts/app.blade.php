@@ -51,7 +51,7 @@
     {{--    --}}
 
 
-    <div class="items-center">
+    <div class="items-center my-20">
         @yield('main')
 
         @yield('posts')
