@@ -10,8 +10,36 @@ class PostController extends Controller
 {
     public function getAllPosts()
     {
-        $posts = Post::get();
-        return view('posts', compact('posts'));
+        $authors = Author::get();
+
+        if(isset($_GET['filter'])) {
+            $posts = $this->filterPosts($_GET);
+        }
+        else {
+            $posts = Post::get();
+        }
+
+        return view('posts', compact('posts', 'authors'));
+    }
+
+    public function filterPosts($get)
+    {
+        $authorName = $get['authorName'];
+
+        $authorsArr = [];
+        $postsArr = [];
+
+        foreach ($authorName as $author) {
+            $authorsArr[] = Author::where('name', $author)->first();
+        }
+
+        foreach ($authorsArr as $author) {
+//            clock($author->id);
+//            clock(Post::where('author_id', $author->id)->get());
+            $postsArr = Post::where('author_id', $author->id)->get();
+        }
+        clock($postsArr);
+        return $postsArr;
     }
 
     public function getPost(int $id)

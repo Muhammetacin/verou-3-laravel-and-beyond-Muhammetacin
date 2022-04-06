@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Muhammet Cin's website for his personal blogs">
 
     <title>Laravel</title>
 
@@ -49,7 +50,6 @@
     {{--        </div>--}}
     {{--    @endif--}}
     {{--    --}}
-
 
     <div class="items-center my-20">
         @yield('main')

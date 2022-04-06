@@ -20,10 +20,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/posts', [PostController::class, 'getAllPosts'])->name('getPosts');
+//Route::get('/posts', [PostController::class, 'filterPosts'])->name('filterPosts');
 Route::get('/posts/{id}', [PostController::class, 'getPost'])->name('getPost');
 
 Route::get('/create_post', [PostController::class, 'getCreatePostView'])->name('createPost');
 Route::post('/create_post', [PostController::class, 'createPost'])->name('createPost');
 
-Route::get('/create_author', [AuthorController::class, 'getCreateView'])->name('createAuthor');
-Route::post('/create_author', [AuthorController::class, 'createAuthor'])->name('createAuthor');
+Route::get('/register_author', [AuthorController::class, 'getCreateView'])->name('createAuthor');
+Route::post('/register_author', [AuthorController::class, 'createAuthor'])->name('createAuthor');

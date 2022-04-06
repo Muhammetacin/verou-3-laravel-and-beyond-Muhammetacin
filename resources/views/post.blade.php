@@ -7,7 +7,7 @@
         <span
             class="text-sm text-gray-500 dark:text-gray-400">{{ $post->author->name }} &#8226; {{ $post->created_at->format('d-m-Y') }}</span>
 
-        <p class="my-3 text-lg font-normal text-gray-700 dark:text-gray-400">{{ $post->text }}</p>
+        <p class="my-3 mt-9 text-lg font-normal text-gray-700 dark:text-gray-400">{{ $post->text }}</p>
     </section>
 
 @endsection
