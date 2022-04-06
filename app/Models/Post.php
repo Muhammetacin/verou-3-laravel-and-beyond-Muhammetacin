@@ -9,5 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'text', 'author'];
+    protected $fillable = ['author_id', 'title', 'description', 'text'];
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
 }

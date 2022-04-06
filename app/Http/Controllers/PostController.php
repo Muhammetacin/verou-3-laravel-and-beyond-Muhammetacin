@@ -31,10 +31,13 @@ class PostController extends Controller
             'text' => 'required|string',
         ]);
 
-        $post = Post::create([
+        $authorSelected = Author::where('name', $request->author)->first();
+        clock($authorSelected);
+
+         $post = Post::create([
+            'author_id' => $authorSelected->id,
             'title' => $request->title,
             'description' => $request->description,
-            'author' => $request->author,
             'text' => $request->text,
         ]);
 
