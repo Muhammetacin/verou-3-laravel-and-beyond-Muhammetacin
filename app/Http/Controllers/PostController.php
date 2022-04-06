@@ -26,6 +26,10 @@ class PostController extends Controller
     {
         $authorName = $get['authorName'];
 
+        if($authorName[0] === 'all') {
+            return Post::get();
+        }
+
         $authorsArr = [];
         $postsArr = [];
 
@@ -34,11 +38,9 @@ class PostController extends Controller
         }
 
         foreach ($authorsArr as $author) {
-//            clock($author->id);
-//            clock(Post::where('author_id', $author->id)->get());
             $postsArr = Post::where('author_id', $author->id)->get();
         }
-        clock($postsArr);
+
         return $postsArr;
     }
 

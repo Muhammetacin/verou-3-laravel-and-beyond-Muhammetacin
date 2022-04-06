@@ -11,12 +11,19 @@
                 <form action="" method="GET">
                     <label><strong>Authors</strong></label><br>
 
+                    <input type="radio" id="all_authors" name="authorName[]" value="all"
+                           @if (isset($_GET['authorName']))
+                           checked
+                        @endif
+                    >
+                    <label for="all_authors"> All</label><br>
+
                     @foreach($authors as $author)
-                        <input type="checkbox" id="{{ $author->id }}" name="authorName[]" value="{{ $author->name }}"
+                        <input type="radio" id="{{ $author->id }}" name="authorName[]" value="{{ $author->name }}"
                                class="my-1.5"
                                @if (isset($_GET['authorName']) && in_array($author->name, $_GET['authorName']))
                                checked
-                            @endif
+                               @endif
                         >
                         <label for="{{ $author->id }}"> {{ $author->name }}</label><br>
                     @endforeach
