@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function getAllPosts()
     {
-        $authors = Author::get();
+        $users = User::get();
 
         if(isset($_GET['filter'])) {
             $posts = $this->filterPosts($_GET);
@@ -19,7 +20,7 @@ class PostController extends Controller
             $posts = Post::get();
         }
 
-        return view('posts', compact('posts', 'authors'));
+        return view('posts', compact('posts', 'users'));
     }
 
     public function filterPosts($get)
@@ -34,11 +35,11 @@ class PostController extends Controller
         $postsArr = [];
 
         foreach ($authorName as $author) {
-            $authorsArr[] = Author::where('name', $author)->first();
+            $authorsArr[] = User::where('name', $author)->first();
         }
 
         foreach ($authorsArr as $author) {
-            $postsArr = Post::where('author_id', $author->id)->get();
+            $postsArr = Post::where('user_id', $author->id)->get();
         }
 
         return $postsArr;
@@ -53,18 +54,18 @@ class PostController extends Controller
 
     public function createPost(Request $request)
     {
-
         $request->validate([
             'title' => 'required|string',
             'description' => 'required|string',
-            'author' => 'required|string',
+//            'author' => 'required|string',
             'text' => 'required|string',
         ]);
 
-        $authorSelected = Author::where('name', $request->author)->first();
+//        $authorSelected = User::where('name', $request->author)->first();
+        clock($request);
 
          $post = Post::create([
-            'author_id' => $authorSelected->id,
+            'user_id' => auth()->user()->id,
             'title' => $request->title,
             'description' => $request->description,
             'text' => $request->text,
@@ -77,7 +78,7 @@ class PostController extends Controller
 
     public function getCreatePostView()
     {
-        $authors = Author::get();
-        return view('create_post', compact('authors'));
+        $users = User::get();
+        return view('create_post', compact('users'));
     }
 }

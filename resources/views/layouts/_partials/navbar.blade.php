@@ -10,14 +10,26 @@
                     <a href="{{ route('getPosts') }}"
                        class="{{ request()->is('posts') ? 'active-link-header' : 'link-header' }}">Posts</a>
                 </li>
+                @guest
                 <li>
                     <a href="{{ route('createAuthor') }}"
                        class="{{ request()->is('register_author') ? 'active-link-header' : 'link-header' }}">Register author</a>
                 </li>
                 <li>
-                    <a href="{{ route('createPost') }}"
-                       class="{{ request()->is('create_post') ? 'active-link-header' : 'link-header' }}">Create post</a>
+                    <a href="{{ route('login') }}"
+                       class="{{ request()->is('login') ? 'active-link-header' : 'link-header' }}">Login</a>
                 </li>
+                @endguest
+                @auth
+                    <li>
+                        <a href="{{ route('createPost') }}"
+                           class="{{ request()->is('create_post') ? 'active-link-header' : 'link-header' }}">Create post</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           class="link-header">Logout</a>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>

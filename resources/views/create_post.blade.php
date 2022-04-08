@@ -24,14 +24,22 @@
                    required="" placeholder="A short description of your post's topic">
         </div>
 
+{{--        <div class="mb-6 w-48">--}}
+{{--            <label for="authors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Author</label>--}}
+{{--            <select id="authors" name="author"--}}
+{{--                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">--}}
+{{--                @foreach($authors as $author)--}}
+{{--                    <option>{{ auth()->user()->name }}</option>--}}
+{{--                @endforeach--}}
+{{--            </select>--}}
+{{--        </div>--}}
+
         <div class="mb-6 w-48">
-            <label for="authors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Author</label>
-            <select id="authors" name="author"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                @foreach($authors as $author)
-                    <option>{{ $author->name }}</option>
-                @endforeach
-            </select>
+            <label for="author"
+                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Author</label>
+            <input type="text" id="author" name="author" value="{{ auth()->user()->name }}" disabled
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   required="" >
         </div>
 
         <div class="mb-6">

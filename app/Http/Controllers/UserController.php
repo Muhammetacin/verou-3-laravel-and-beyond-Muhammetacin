@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AuthorController extends Controller
+class UserController extends Controller
 {
     public function getCreateView()
     {

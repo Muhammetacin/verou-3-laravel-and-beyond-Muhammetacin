@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Author;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +20,7 @@ class PostSeeder extends Seeder
 
         Post::factory()
             ->count($posts)
-            ->for(Author::factory())
+            ->for(User::factory())
             ->create();
 
     }

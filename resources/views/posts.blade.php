@@ -18,7 +18,7 @@
                     >
                     <label for="all_authors"> All</label><br>
 
-                    @foreach($authors as $author)
+                    @foreach($users as $author)
                         <input type="radio" id="{{ $author->id }}" name="authorName[]" value="{{ $author->name }}"
                                class="my-1.5"
                                @if (isset($_GET['authorName']) && in_array($author->name, $_GET['authorName']))
@@ -42,7 +42,7 @@
                         <a href="{{ route('getPost', ['id' => $post->id]) }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
                             <span
-                                class="text-sm text-gray-500 dark:text-gray-400">{{ $post->author->name }} &#8226; {{ $post->created_at->format('d-m-Y') }}</span>
+                                class="text-sm text-gray-500 dark:text-gray-400">{{ $post->user->name }} &#8226; {{ $post->created_at->format('d-m-Y') }}</span>
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $post->description }}</p>
                         <a href="{{ route('getPost', ['id' => $post->id]) }}"
