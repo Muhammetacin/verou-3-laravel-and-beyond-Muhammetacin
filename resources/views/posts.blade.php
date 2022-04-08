@@ -7,7 +7,7 @@
         <h2 class="my-10 text-5xl font-semibold text-center">Posts</h2>
 
         <div class="flex flex-row">
-            <aside class="inline-block float-left -ml-80 basis-1/2" style="padding-left: 7rem; padding-top: 1rem;">
+            <aside class="inline-block float-left -ml-[256px] basis-1/2" style="padding-left: 7rem; padding-top: 1rem;">
                 <form action="" method="GET">
                     <label><strong>Authors</strong></label><br>
 
